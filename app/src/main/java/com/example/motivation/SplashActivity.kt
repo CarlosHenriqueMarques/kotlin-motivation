@@ -1,7 +1,9 @@
 package com.example.motivation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.motivation.util.MotivationConstant
 import com.example.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -22,6 +24,14 @@ class SplashActivity : AppCompatActivity() {
 
     private fun handleSave() {
         val name : String = editName.text.toString()
-        mSecurity.storeString(MotivationConstant.KEY.PERSON_NAME, name)
+
+        if(name.isNullOrEmpty()){
+            Toast.makeText(this,getString(R.string.informe_name), Toast.LENGTH_LONG).show()
+        }else{
+            mSecurity.storeString(MotivationConstant.KEY.PERSON_NAME, name)
+
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
