@@ -1,8 +1,9 @@
 package com.example.motivation.mock
 
 import com.example.motivation.util.MotivationConstant
+import kotlin.random.Random
 
-class Phrase(description : String, categories : Int )
+class Phrase(val description : String, val categories : Int )
 
 class Mock{
     private val ALL = MotivationConstant.PHRASE_FILTER.ALL
@@ -23,8 +24,13 @@ class Mock{
         Phrase("Se você não sabe onde ir, qualquer caminho serve", SUN),
         Phrase("Se você acredita faz toda diferença ", SUN),
         Phrase("Riscos devem ser assumidos, pois o maior risco é não arriscar", SUN)
-
-
-
     )
+
+    fun getPhrase(value : Int) : String{
+        val filtered = mListPhrases.filter { it ->(it.categories == value || value == ALL)}
+
+        val rand = Random.nextInt(filtered.size)
+
+        return filtered[rand].description
+    }
 }
