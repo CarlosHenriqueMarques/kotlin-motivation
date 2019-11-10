@@ -5,22 +5,31 @@ import android.os.Bundle
 import com.example.motivation.R
 import com.example.motivation.mock.Mock
 import com.example.motivation.util.MotivationConstant
+import com.example.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private var mFilter : Int = MotivationConstant.PHRASE_FILTER.ALL
-    private  val mMock = Mock()
+    private val mMock = Mock()
+    private lateinit var mSecurityPreferences: SecurityPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        mSecurityPreferences = SecurityPreferences(this)
         loadFilter()
         handlerFilters()
         refreshPhrase()
+        verifyUser()
+
         buttomNewPhrase.setOnClickListener {
             refreshPhrase()
         }
+    }
+
+    private fun verifyUser() {
+        textUserName.text = mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME)
     }
 
     private fun loadFilter() {

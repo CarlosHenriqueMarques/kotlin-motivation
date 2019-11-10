@@ -12,15 +12,21 @@ import kotlinx.android.synthetic.main.activity_splash.*
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var mSecurity : SecurityPreferences
+    private lateinit var mSecurityPreferences: SecurityPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
+        mSecurityPreferences = SecurityPreferences(this)
         mSecurity = SecurityPreferences(this)
         buttonSave.setOnClickListener {
             handleSave()
         }
+        verifyUser()
+    }
+
+    private fun verifyUser() {
+        editName.setText(mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME))
     }
 
     private fun handleSave() {
