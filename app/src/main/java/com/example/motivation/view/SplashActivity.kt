@@ -26,7 +26,11 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun verifyUser() {
-        editName.setText(mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME))
+        val user = mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME)
+        if(user.isNotEmpty()){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        editName.setText(user)
     }
 
     private fun handleSave() {
