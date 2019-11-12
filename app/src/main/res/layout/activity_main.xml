@@ -1,65 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_splash"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
 
-
+    <View
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            android:elevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    
+    
     <Button
-        android:id="@+id/buttomNewPhrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nova Frase"
-        app:layout_constraintTop_toBottomOf="@id/textPhrase" />
+            android:id="@+id/buttomNewPhrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nova Frase"
+            tools:layout_editor_absoluteX="107dp"
+            tools:layout_editor_absoluteY="358dp" />
 
-    <LinearLayout
-        android:id="@+id/linearMenuFilter"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
 
-        <ImageView
+    <ImageView
             android:id="@+id/image_all"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_all_unselect" />
+            android:elevation="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_all_select" />
 
-        <ImageView
+    <ImageView
             android:id="@+id/image_sun"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_sun_unselect" />
 
-        <ImageView
+    <ImageView
             android:id="@+id/image_happy"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toStartOf="@+id/image_sun"
+            app:layout_constraintStart_toEndOf="@+id/image_all"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_happy_unselected" />
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/textPhrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phrase"
-        app:layout_constraintTop_toBottomOf="@id/textUserName" />
+            android:id="@+id/textPhrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phrase"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="175dp" />
 
     <TextView
-        android:id="@+id/textUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Usuário"
-        app:layout_constraintTop_toBottomOf="@id/linearMenuFilter" />
+            android:id="@+id/textUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuário"
+            tools:layout_editor_absoluteX="291dp"
+            tools:layout_editor_absoluteY="132dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
