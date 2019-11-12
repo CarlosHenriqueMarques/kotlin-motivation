@@ -8,6 +8,7 @@
         tools:context=".view.MainActivity">
 
     <View
+            android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:background="@color/colorPrimary"
@@ -15,16 +16,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    
-    
+
+
     <Button
             android:id="@+id/buttomNewPhrase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorAccent"
             android:text="Nova Frase"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="358dp" />
-
+            android:textColor="@color/colorTextButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
             android:id="@+id/image_all"
@@ -73,19 +77,29 @@
 
     <TextView
             android:id="@+id/textPhrase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="354dp"
+            android:layout_height="98dp"
+            android:gravity="center"
             android:text="Phrase"
-            tools:layout_editor_absoluteX="137dp"
-            tools:layout_editor_absoluteY="175dp" />
+            android:textColor="@color/colorTextLigthGray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <TextView
             android:id="@+id/textUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
             android:text="Usuário"
-            tools:layout_editor_absoluteX="291dp"
-            tools:layout_editor_absoluteY="132dp" />
+            android:textColor="@color/colorTextLigthGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
