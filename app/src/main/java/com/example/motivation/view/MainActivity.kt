@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun verifyUser() {
-        textUserName.text = mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME)
+        textUserName.text = getString(R.string.welcome) + " " +  mSecurityPreferences.getStoreString(MotivationConstant.KEY.PERSON_NAME)
     }
 
     private fun loadFilter() {
@@ -37,25 +37,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handlerFilters() {
-        image_all.setImageResource(R.drawable.ic_all_unselect)
-        image_sun.setImageResource(R.drawable.ic_sun_unselect)
-        image_happy.setImageResource(R.drawable.ic_happy_unselected)
-
         image_all.setOnClickListener {
             mFilter = MotivationConstant.PHRASE_FILTER.ALL
             image_all.setImageResource(R.drawable.ic_all_select)
+            image_sun.setImageResource(R.drawable.ic_sun_unselect)
+            image_happy.setImageResource(R.drawable.ic_happy_unselected)
             refreshPhrase()
         }
 
         image_sun.setOnClickListener {
             mFilter = MotivationConstant.PHRASE_FILTER.SUN
             image_sun.setImageResource(R.drawable.ic_sun_select)
+            image_all.setImageResource(R.drawable.ic_all_unselect)
+            image_happy.setImageResource(R.drawable.ic_happy_unselected)
             refreshPhrase()
         }
 
         image_happy.setOnClickListener {
             mFilter = MotivationConstant.PHRASE_FILTER.HAPPY
             image_happy.setImageResource(R.drawable.ic_happy_selected)
+            image_all.setImageResource(R.drawable.ic_all_unselect)
+            image_sun.setImageResource(R.drawable.ic_sun_unselect)
             refreshPhrase()
         }
     }
