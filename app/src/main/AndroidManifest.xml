@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/StatusBarColor"/>
     </application>
 
 </manifest>
