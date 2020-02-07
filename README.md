@@ -5,6 +5,10 @@ This is an application just for practice and study.The app show phrases�
 - Night's motivation phrases
 - Morning's motivation phrases
 
+## Demo Application
+Demo video:
+* [Here](https://www.youtube.com/watch?v=QkRtVh155ZA)
+
 ## Installation
 Clone this repository and import into **Android Studio**
 ```bash
